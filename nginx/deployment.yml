@@ -6,7 +6,7 @@ metadata:
   namespace: nginx
 
 spec:
-  replicas: 2
+  replicas: 1
 
   selector:
     matchLabels:
@@ -26,8 +26,17 @@ spec:
           image: nginx:latest
           ports:
             - containerPort: 80
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 200m
+              memory: 256Mi
+
+                
           volumeMounts:
-            - mountPath: /var/www/html
+            - mountPath: /usr/share/nginx/html
               name: my-volume
       volumes:
         - name: my-volume

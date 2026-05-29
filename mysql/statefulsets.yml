@@ -7,7 +7,7 @@ metadata:
 
 spec:
   serviceName: mysql-service
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: mysql
@@ -22,12 +22,25 @@ spec:
         image: mysql:8.0
         ports:
           - containerPort: 3306
+        resources:
+          requests:
+            cpu: 100m
+            memory: 128Mi
+          limits:
+            cpu: 200m
+            memory: 256Mi
         env: 
         - name: MYSQL_ROOT_PASSWORD
-          value: root
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secret
+              key: MYSQL_ROOT_PASSWORD
 
         - name: MYSQL_DATABASE
-          value: devops
+          valueFrom:
+            configMapKeyRef:
+              name: mysql-config-map
+              key: MYSQL_DATABASE
 
         volumeMounts:
         - name: mysql-data
