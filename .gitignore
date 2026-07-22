@@ -1,2 +1,48 @@
 django-notes-app/
 istio-practice/istio-1.30.0/
+# ===========================
+# OS Files
+# ===========================
+
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ===========================
+# IDE / Editor
+# ===========================
+
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ===========================
+# Logs
+# ===========================
+
+*.log
+
+# ===========================
+# Temporary Files
+# ===========================
+
+*.tmp
+*.temp
+
+# ===========================
+# Environment Variables
+# ===========================
+
+.env
+.env.*
+
+# ===========================
+# Terraform (if added later)
+# ===========================
+
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+terraform.tfvars

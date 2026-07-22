@@ -29,6 +29,26 @@ This example demonstrates how to deploy an Apache HTTP Server on Kubernetes with
 
 ---
 
+## Architecture
+
+Namespace
+   │
+ServiceAccount
+   │
+Role
+   │
+RoleBinding
+   │
+Deployment
+   │
+Service
+   │
+HPA
+   │
+VPA
+
+---
+
 ## Deploy
 
 Create Namespace
@@ -63,6 +83,19 @@ Enable Autoscaling
 kubectl apply -f hpa.yml
 kubectl apply -f vpa.yml
 ```
+---
+
+## Screenshots
+
+### Horizontal Pod Autoscaler
+
+![HPA](screenshots/hpa.png)
+
+---
+
+### Vertical Pod Autoscaler
+
+![VPA](screenshots/vpa.png)
 
 ---
 
