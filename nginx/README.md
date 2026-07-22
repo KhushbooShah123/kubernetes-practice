@@ -167,7 +167,7 @@ kubectl get pvc
 
 ### NGINX Deployment
 
-![NGINX Deployment](screenshots/Screenshot%202026-05-27%20142130.png)
+![NGINX Deployment](screenshots/nginx.png)
 
 ---
 
